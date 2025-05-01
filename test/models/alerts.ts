@@ -2,8 +2,7 @@ class Alerts {
     readonly okCookiesElement = $("#cookieChoiceDismiss");
 
     async confirmCookies() {
-        const el = await this.okCookiesElement;
-        await el.click();
+        await this.okCookiesElement.click();
     }
 }
 
