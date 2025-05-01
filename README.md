@@ -1,6 +1,6 @@
 # Smart-Frame Implementation with WebDriverIO
 
-An implementation of the `smart-frame` attribute that cannot be done with Cypress. In the search for a tool, WebDriverIO turned out to be the best, so I decided to use it in practice.
+The implementation of the `smart-frame` attribute, which cannot be done with every framework. After exploring available tools, WebDriverIO turned out to be a good solution, so I decided to use it. Additionally, I wanted to check how to write tests in WebDriverIO for simple scenarios that I needed to test.
 
 ## How to Run
 
