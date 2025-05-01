@@ -1,11 +1,10 @@
 class Alerts {
-    get okCookiesElement() {
-        return $("#cookieChoiceDismiss");
-    }
+    readonly okCookiesElement = $("#cookieChoiceDismiss");
 
     async confirmCookies() {
-        await this.okCookiesElement.click();
+        const el = await this.okCookiesElement;
+        await el.click();
     }
 }
 
-export default new Alerts
+export default new Alerts();

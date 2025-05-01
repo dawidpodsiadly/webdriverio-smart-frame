@@ -1,38 +1,27 @@
 class SecondScenario {
-
-    get picture() {
-        return $('smart-frame');
-    }
-
-    get shareButton() {
-        return $('.--share span');
-    }
-
-    get seIcon() {
-        return $('.--custom span');
-    }
+    readonly picture = $('smart-frame');
+    readonly shareButton = $('.--share span');
+    readonly seIcon = $('.--custom span');
 
     async hoverPicture() {
         await this.picture.moveTo();
     }
 
     async verifyShareButton() {
-        const button = await this.shareButton;
-        await expect(button).toHaveText('SHARE');
-        await expect(button).toBeDisplayed();
+        await expect(this.shareButton).toHaveText('SHARE');
+        await expect(this.shareButton).toBeDisplayed();
     }
 
     async clickSe() {
-        const icon = await this.seIcon;
-        await expect(icon).toHaveText('SE');
-        await icon.click();
+        await expect(this.seIcon).toHaveText('SE');
+        await this.seIcon.click();
     }
 
     async verifyRedirection() {
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
+        const handles = await browser.getWindowHandles();
+        await browser.switchToWindow(handles[1]);
         await expect(browser).toHaveUrl('https://smartframe.io/');
     }
 }
 
-export default new SecondScenario
+export default new SecondScenario();
